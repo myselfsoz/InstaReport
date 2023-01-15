@@ -14,9 +14,9 @@ page_headers ={"Accept":"text/html,application/xhtml+xml,application/xml;q=0.9,i
 report_headers ={"Accept":"*/*","Accept-Encoding":"gzip, deflate","Accept-Language":"tr-TR,tr;q=0.8,en-US;q=0.5,en;q=0.3","Cache-Control":"no-cache","Connection":"keep-alive","Content-Type":"application/x-www-form-urlencoded","DNT":"1","Host":"help.instagram.com","Origin":"help.instagram.com","Pragma":"no-cache","Referer":"https://help.instagram.com/contact/497253480400030","TE":"Trailers",}
 
 
-def random_str (O0O0000000000OOOO ):
-    O00O0OO0O0O0OOOOO =string .ascii_lowercase +string .ascii_uppercase +string .digits 
-    return ''.join (random .choice (O00O0OO0O0O0OOOOO )for O0OOO00OO0O0OO00O in range (O0O0000000000OOOO ))
+def random_str (strLength ):
+    randomStr =string .ascii_lowercase +string .ascii_uppercase +string .digits 
+    return ''.join (random .choice (randomStr )for character in range (strLength ))
     
     
     #main profile reporting start.........
@@ -89,7 +89,7 @@ def report_profile_attack (p_targetUsername ,p_proxyItems ):
     fbReq_post_Data ={"jazoest":"2723","lsd":OOOOOO000OOOO0O00 ,"instagram_username":p_targetUsername ,"Field241164302734019_iso2_country_code":"TR","Field241164302734019":"Türkiye","support_form_id":"497253480400030","support_form_hidden_fields":"{}","support_form_fact_false_fields":"[]","__user":"0","__a":"1","__dyn":"7xe6Fo4SQ1PyUhxOnFwn84a2i5U4e1Fx-ey8kxx0LxW0DUeUhw5cx60Vo1upE4W0OE2WxO0SobEa81Vrzo5-0jx0Fwww6DwtU6e","__csr":"","__req":"d","__beoa":"0","__pc":"PHASED:DEFAULT","dpr":"1","__rev":O000OO0OOO00000OO ,"__s":"5gbxno:2obi73:56i3vc","__hsi":OO0O0OO00OOOOOO0O ,"__comet_req":"0","__spin_r":OO00O0O0O00OOOOO0 ,"__spin_b":OO00OO000OO000OO0 ,"__spin_t":O00O0O0O0O00O0O00 }
     try :
         fbReq =_sessionStore .post ("https://help.instagram.com/ajax/help/contact/submit/page",data =fbReq_post_Data ,headers =report_headers ,cookies =_cookieTopst_v2 ,timeout =10 )
-    except :s
+    except :
         print_error ("Connection error occurred (FormRequestsError)")
         return 
     if (fbReq .status_code !=200 ):
