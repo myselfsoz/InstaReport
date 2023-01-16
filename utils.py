@@ -34,16 +34,12 @@ def print_status(message, *argv):
 def clearConsole():
     os.system('clear')
 
-def parse_proxy_file(fpath):
-    if (path.exists(fpath) == False):
-        print("")
-        print_error("Proxy file not found! (I wonder if you're taking the wrong path?)")
-        print_error("Exiting From Program")
-        exit(0)
-    
+def parse_proxy_file(link):
     proxies = []
-    with open(fpath, "r") as proxy_file:
-        for line in proxy_file.readlines():
+    r=get(link)
+    t=(r.text).split("\n")
+    iterator=1
+    for line in t:
             line = line.replace(" ", "")
             line = line.replace("\r", "")
             line = line.replace("\n", "")
@@ -52,13 +48,11 @@ def parse_proxy_file(fpath):
                 continue
             
             proxies.append(line)
-    
-    if (len(proxies) > 50):
-        proxies = random.choices(proxies, 50)
+            #if(iterator==50): #limited to 50 proxies
+                #break
+            iterator=iterator+1
         
     print("")
     print_success(str(len(proxies)) + " Proxies have been installed!")
 
     return proxies
-
-
