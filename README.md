@@ -1,11 +1,13 @@
 # InstaReport
 Credits : https://github.com/Crevils/InstaReport
 
+
+##Updated
 Finally `1 hit in trillion tries`
 
 
-<img src="hit.png"/>
-
+<img src="scr1.png"/>
+<img src="scr2.png"/>
 
 
 
